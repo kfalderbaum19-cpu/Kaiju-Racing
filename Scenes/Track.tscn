@@ -1,3 +1,54 @@
 [gd_scene format=3 uid="uid://ctua2ws7qdju2"]
 
-[node name="Track" type="Node2D" unique_id=2091779681]
+[ext_resource type="Script" uid="uid://bxpo71pr0x0gq" path="res://Scripts/TrackManager.cs" id="1_3hn85"]
+[ext_resource type="PackedScene" uid="uid://cd81ne5hvbtxl" path="res://Scenes/Car.tscn" id="1_7ehuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tps3"]
+size = Vector2(28, 325)
+
+[node name="Track" type="Node2D" unique_id=666374731]
+script = ExtResource("1_3hn85")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1963543768]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.42352942, 0.40392157, 0.46666667, 1)
+
+[node name="Car" parent="." unique_id=1653130737 instance=ExtResource("1_7ehuj")]
+position = Vector2(-245, 342)
+rotation = 1.553343
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1797639011]
+position = Vector2(55.30127, 0.8648052)
+scale = Vector2(0.7144819, 0.7891891)
+points = PackedVector2Array(2, 455, 422, 230, 469, -79, 405, -369, 133, -480, -180, -476, -399, -429, -628, -53, -584, 445)
+closed = true
+width = 180.0
+
+[node name="StartFinishLine" type="ColorRect" parent="Line2D" unique_id=1644324375]
+offset_left = -266.34863
+offset_top = 357.5001
+offset_right = -226.34863
+offset_bottom = 551.37
+color = Color(1, 0.30588236, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=45133038]
+position = Vector2(5, 3)
+zoom = Vector2(0.6, 0.6)
+
+[node name="FinishLineTrigger" type="Area2D" parent="." unique_id=1528377089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLineTrigger" unique_id=1530607817]
+position = Vector2(-119, 343)
+shape = SubResource("RectangleShape2D_1tps3")
+
+[connection signal="body_entered" from="FinishLineTrigger" to="." method="_on_finish_line_trigger_body_entered"]

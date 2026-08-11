@@ -1,15 +1,24 @@
 using Godot;
-using System;
 
-public partial class NewScript : Node
+public partial class CarController : CharacterBody2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	[Export] public float Speed = 600f;
+	[Export] public float TurnSpeed = 3f;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
+		float dt = (float)delta;
+
+		float forward = 0f;
+		if (Input.IsKeyPressed(Key.W)) forward = 1f;
+		if (Input.IsKeyPressed(Key.S)) forward = -1f;
+
+		float turn = 0f;
+		if (Input.IsKeyPressed(Key.D)) turn = 1f;
+		if (Input.IsKeyPressed(Key.A)) turn = -1f;
+
+		Rotation += turn * TurnSpeed * dt;
+		Velocity = Vector2.Up.Rotated(Rotation) * forward * Speed;
+		MoveAndSlide();
 	}
 }

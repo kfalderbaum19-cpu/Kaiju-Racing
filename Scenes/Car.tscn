@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cd81ne5hvbtxl"]
+
+[ext_resource type="Script" uid="uid://cfhbycthcs53q" path="res://Scripts/CarController.cs" id="1_5orbf"]
+
+[node name="Car" type="CharacterBody2D" unique_id=333725242]
+modulate = Color(1, 0.3254902, 1, 1)
+self_modulate = Color(1, 0.047058824, 1, 1)
+z_index = 1
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_5orbf")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=544206087]
+position = Vector2(0.25, 0.25)
+scale = Vector2(0.034158427, 0.081152)
+polygon = PackedVector2Array(-70666664, -57999996, 61800004, -58100004, 64000004, 107700010, -69400010, 103400010)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1237419749]
+scale = Vector2(0.15, 0.15)
+polygon = PackedVector2Array(-67200010, -51600004, 58200004, -54500004, 62600004, 106300010, -67200010, 107000010)
