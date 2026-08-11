@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaiju Racing", "Kaiju Racing.csproj", "{053052C5-A9C0-4D9C-8A1F-30A192016D95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{053052C5-A9C0-4D9C-8A1F-30A192016D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053052C5-A9C0-4D9C-8A1F-30A192016D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053052C5-A9C0-4D9C-8A1F-30A192016D95}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{053052C5-A9C0-4D9C-8A1F-30A192016D95}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{053052C5-A9C0-4D9C-8A1F-30A192016D95}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{053052C5-A9C0-4D9C-8A1F-30A192016D95}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
